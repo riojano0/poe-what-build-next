@@ -123,6 +123,7 @@ const Home: NextPage = () => {
           </span>
         </a>
         <p>Limited to build listed by current season version 3.19</p>
+        <p className={styles.footerDisclaimer}>I have no relation with the builds, I just collect them and provide them, more information in the github project</p>
       </footer>
     </div>
   )
