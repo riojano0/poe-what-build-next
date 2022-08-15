@@ -80,7 +80,7 @@ const Home: NextPage = () => {
                 <p className=''>{build?.class_name || "Class"}</p>
                 <p>{build?.ascendancy || "Ascendancy" }</p>
                 <p>{build?.build_name || "Build Name" }</p>
-                {build?.build_link && <a className={styles.buildLink} href='build?.build_link '>Link</a>}
+                {build?.build_link && <a target="_blank" rel="noreferrer" className={styles.buildLink} href={build?.build_link}>Link</a>}
               </>
             }
           </div>
