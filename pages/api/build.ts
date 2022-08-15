@@ -73,8 +73,8 @@ export default async function handler(
     });
 
     
-    const expire30minutes = 1000*30*60;
-    cache.put("builds", builds, expire30minutes);
+    const expire10hourse = 1000*30*600;
+    cache.put("builds", builds, expire10hourse);
   }
 
   const className = req.query["class_name"] as string;
