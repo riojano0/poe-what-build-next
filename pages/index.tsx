@@ -22,6 +22,7 @@ const Home: NextPage = () => {
   const [currentAscendancy, setCurrentAscendancy] = useState('');
   const [build, setBuild] = useState({} as PoeBuild);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const changeSelectedClass = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const classSelected =  poeClasses[parseInt(event.target.value)];
@@ -35,6 +36,8 @@ const Home: NextPage = () => {
   }
 
   const onChooseClick = () => {
+    setLoading(true)
+
     fetch(`/api/build?class_name=${currentClass.class}&ascendancy=${currentAscendancy}`)
     .then(res => res.json())
     .then((data) => {
@@ -45,8 +48,19 @@ const Home: NextPage = () => {
         setBuild(() => ({} as PoeBuild))
         setError(() => "Not found build")
       }
+      setLoading(false)
     })
   }
+
+  const buildContent =  
+    (error.length > 0)
+    ? <p>{error}</p>
+    : <>
+      <p className=''>{build?.class_name || "Class"}</p>
+      <p>{build?.ascendancy || "Ascendancy" }</p>
+      <p>{build?.build_name || "Build Name" }</p>
+      {build?.build_link && <a target="_blank" rel="noreferrer" className={styles.buildLink} href={build?.build_link}>Link</a>}
+    </>
 
   return (
     <div className={styles.container}>
@@ -73,15 +87,24 @@ const Home: NextPage = () => {
           <button onClick={onChooseClick} className={styles.cardExpanded + " " + styles.bigText}>Choose for me</button>
 
           <div className={styles.cardExpanded}>
-            {
-              (error.length > 0)
-              ? <p>{error}</p>
-              : <>
-                <p className=''>{build?.class_name || "Class"}</p>
-                <p>{build?.ascendancy || "Ascendancy" }</p>
-                <p>{build?.build_name || "Build Name" }</p>
-                {build?.build_link && <a target="_blank" rel="noreferrer" className={styles.buildLink} href={build?.build_link}>Link</a>}
-              </>
+            { loading 
+              ? <div className={styles.loader}>
+              <svg className='loader' version="1.1" id="L3" x="0px" y="0px"
+                 viewBox="0 0 100 100">
+                <circle fill="none" stroke="#fff"  cx="50" cy="50" r="44" />
+                  <circle fill="#fff" stroke="#e74c3c"  cx="8" cy="54" r="6" >
+                    <animateTransform
+                      attributeName="transform"
+                      dur="2s"
+                      type="rotate"
+                      from="0 50 48"
+                      to="360 50 52"
+                      repeatCount="indefinite" />
+                  </circle>
+                </svg>
+                Loading...
+              </div>
+              : buildContent
             }
           </div>
         </div>

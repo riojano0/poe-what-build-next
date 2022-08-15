@@ -143,6 +143,14 @@
   margin-left: 0.5rem;
 }
 
+
+.loader {
+  width: 100px;
+  height: 100px;
+  margin: 0px;
+  display:inline-block;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
