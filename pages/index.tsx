@@ -58,7 +58,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          PoE - <strong className="blue">What next build I will play?</strong>
+          PoE - <strong className="blue">What next build Will I play?</strong>
         </h1>
 
         <div className={styles.grid}>
@@ -94,7 +94,7 @@ const Home: NextPage = () => {
           rel="noopener noreferrer"
         >
           <span className={styles.logo}>
-            <Image src="https://icongr.am/devicon/github-original.svg?size=128&amp;color=currentColor" alt="GitHub Logo" width={72} height={26} />
+            <Image src="https://icongr.am/devicon/github-original.svg?size=128&color=currentColor&w=96&q=75" alt="GitHub Logo" width={72} height={26} />
           </span>
         </a>
         <p>Current season version 3.19</p>
