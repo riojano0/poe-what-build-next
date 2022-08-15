@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   const poeClasses = [
         {class: "ALL", ascendancy: ["ALL"]},
         {class:"Duelist", ascendancy: ["ALL", "Slayer", "Gladiator", "Champion"]},
-        {class:"Shadow", ascendancy: ["ALL", "Duelist", "Saboteur", "Trickster"]},
+        {class:"Shadow", ascendancy: ["ALL", "Assassin", "Saboteur", "Trickster"]},
         {class:"Marauder", ascendancy: ["ALL", "Juggernaut", "Berserker", "Chieftain"]},
         {class:"Witch", ascendancy: ["ALL", "Necromancer", "Occultist", "Elementalist"]},
         {class:"Ranger", ascendancy:  ["ALL", "Deadeye", "Raider", "Pathfinder"]},
