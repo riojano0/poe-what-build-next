@@ -50,8 +50,6 @@ export default async function handler(
   res: NextApiResponse<PoeBuild>
 ): Promise<void> {
   const db = getFirestore();
-  const buildCollections = db.collection('poe-next-builds');
-  const snapshot = await buildCollections.get();
 
   const buildCache = cache.get("builds");
 
@@ -59,6 +57,9 @@ export default async function handler(
   if (buildCache) {
     builds = buildCache 
   } else {
+    const buildCollections = db.collection('poe-next-builds');
+    const snapshot = await buildCollections.get();
+  
     snapshot.forEach( (document) => {
       const data = document.data()
   
