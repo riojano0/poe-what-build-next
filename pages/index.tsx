@@ -117,7 +117,7 @@ const Home: NextPage = () => {
           rel="noopener noreferrer"
         >
           <span className={styles.logo}>
-            <Image src="https://icongr.am/devicon/github-original.svg?size=128&color=currentColor&w=96&q=75" alt="GitHub Logo" width={72} height={26} />
+            <Image src="/github-original.svg" alt="GitHub Logo" width={72} height={26} />
           </span>
         </a>
         <p>Current season version 3.19</p>
