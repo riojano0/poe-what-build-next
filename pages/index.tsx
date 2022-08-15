@@ -120,7 +120,7 @@ const Home: NextPage = () => {
             <Image src="/github-original.svg" alt="GitHub Logo" width={72} height={26} />
           </span>
         </a>
-        <p>Current season version 3.19</p>
+        <p>Limited to build listed by current season version 3.19</p>
       </footer>
     </div>
   )
