@@ -73,7 +73,9 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>
           PoE - <strong className="blue">What next build Will I play?</strong>
+          
         </h1>
+        <p className={styles.description}>(Not limited to starters)</p>
 
         <div className={styles.grid}>
           <select className={styles.card} onChange={changeSelectedClass} >
