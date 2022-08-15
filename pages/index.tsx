@@ -46,7 +46,6 @@ const Home: NextPage = () => {
         setError(() => "Not found build")
       }
     })
-    console.log(currentClass.class + currentAscendancy)
   }
 
   return (
