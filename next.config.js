@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
 
   images: {
-    domains: ['icongr.am']
+    domains: ['icongr.am', 'www.icongr.am', 'https://icongr.am']
   }
 }
 
