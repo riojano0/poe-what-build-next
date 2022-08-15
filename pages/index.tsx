@@ -67,6 +67,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Poe - What build next?</title>
         <meta name="description" content="Path of exile, next build selector to play" />
+        <meta name="google-site-verification" content="_IacuFVXYpioKEJznav42ivcpxHipVjhEiyEF_thRQQ" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
